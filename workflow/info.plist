@@ -1,0 +1,636 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>app.alfred.stephenc.viewfolder</string>
+	<key>category</key>
+	<string>Tools</string>
+	<key>connections</key>
+	<dict>
+		<key>1E4A7F51-8E14-4665-9D48-29A6AE213DCC</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>2F3CB593-D5B2-4EAE-96CC-3A1B9CD19221</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>2F3CB593-D5B2-4EAE-96CC-3A1B9CD19221</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>E754BA99-B0AB-46F8-BCDE-BC531777A076</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>4352170D-4321-422E-816F-9004EC51622B</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>2F3CB593-D5B2-4EAE-96CC-3A1B9CD19221</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>5989427C-9BBA-44A7-8670-55715157C148</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>1E4A7F51-8E14-4665-9D48-29A6AE213DCC</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<true/>
+			</dict>
+		</array>
+		<key>6C9C88B8-500A-47C3-93DD-914DB02D0FFD</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>C30245D7-4188-4568-91D6-4C7F7741A7E6</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>C30245D7-4188-4568-91D6-4C7F7741A7E6</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>86EC13B7-5090-4DE2-B4EA-194A7C30E2B4</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<true/>
+			</dict>
+		</array>
+		<key>E754BA99-B0AB-46F8-BCDE-BC531777A076</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>6C9C88B8-500A-47C3-93DD-914DB02D0FFD</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>E834C3F4-64A3-42F3-84FF-AFE19539D306</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>2F3CB593-D5B2-4EAE-96CC-3A1B9CD19221</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<true/>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Stephen Christy</string>
+	<key>description</key>
+	<string>Display the contents of a folder in Alfred</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>View folder contents in Alfred</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>keyword</key>
+				<string>{var:defaultFolderKeyword}</string>
+				<key>subtext</key>
+				<string>View the contents of the folder in Alfred</string>
+				<key>text</key>
+				<string>View {var:defaultFolder}</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>5989427C-9BBA-44A7-8670-55715157C148</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argument</key>
+				<string>{var:defaultFolder}</string>
+				<key>passthroughargument</key>
+				<false/>
+				<key>variables</key>
+				<dict/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.argument</string>
+			<key>uid</key>
+			<string>1E4A7F51-8E14-4665-9D48-29A6AE213DCC</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>tasksettings</key>
+				<dict>
+					<key>recursive</key>
+					<true/>
+				</dict>
+				<key>taskuid</key>
+				<string>com.alfredapp.automation.core/files-and-folders/directory.children.sort</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.automation.task</string>
+			<key>uid</key>
+			<string>E754BA99-B0AB-46F8-BCDE-BC531777A076</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>openwith</key>
+				<string></string>
+				<key>sourcefile</key>
+				<string></string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.openfile</string>
+			<key>uid</key>
+			<string>86EC13B7-5090-4DE2-B4EA-194A7C30E2B4</string>
+			<key>version</key>
+			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>anchorfields</key>
+				<true/>
+				<key>argumenttrimmode</key>
+				<integer>0</integer>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>daterange</key>
+				<integer>0</integer>
+				<key>fields</key>
+				<array>
+					<dict>
+						<key>field</key>
+						<string>kMDItemDisplayName</string>
+						<key>not</key>
+						<false/>
+						<key>split</key>
+						<true/>
+						<key>value</key>
+						<string>{query}</string>
+						<key>words</key>
+						<true/>
+					</dict>
+					<dict>
+						<key>field</key>
+						<string>kMDItemAlternateNames</string>
+						<key>not</key>
+						<false/>
+						<key>split</key>
+						<true/>
+						<key>value</key>
+						<string>{query}</string>
+						<key>words</key>
+						<true/>
+					</dict>
+					<dict>
+						<key>field</key>
+						<string>kMDItemFinderComment</string>
+						<key>not</key>
+						<false/>
+						<key>split</key>
+						<true/>
+						<key>value</key>
+						<string>{query}</string>
+						<key>words</key>
+						<true/>
+					</dict>
+				</array>
+				<key>includesystem</key>
+				<false/>
+				<key>keyword</key>
+				<string>{var:promptedFolderKeyword}</string>
+				<key>limit</key>
+				<integer>0</integer>
+				<key>runningsubtext</key>
+				<string></string>
+				<key>scopes</key>
+				<array>
+					<string>~/Desktop</string>
+					<string>~/Documents</string>
+					<string>~/Downloads</string>
+					<string>~/Movies</string>
+					<string>~/Music</string>
+					<string>~/Pictures</string>
+					<string>~/Public</string>
+				</array>
+				<key>sortmode</key>
+				<integer>0</integer>
+				<key>subtext</key>
+				<string>Press space and start typing the name of the folder in which you wish to start your search</string>
+				<key>title</key>
+				<string>View contents of selected folder</string>
+				<key>types</key>
+				<array>
+					<string>public.folder</string>
+				</array>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.filefilter</string>
+			<key>uid</key>
+			<string>E834C3F4-64A3-42F3-84FF-AFE19539D306</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>alfredfiltersresults</key>
+				<true/>
+				<key>alfredfiltersresultsmatchmode</key>
+				<integer>0</integer>
+				<key>argumenttreatemptyqueryasnil</key>
+				<false/>
+				<key>argumenttrimmode</key>
+				<integer>0</integer>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>escaping</key>
+				<integer>68</integer>
+				<key>queuedelaycustom</key>
+				<integer>3</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<true/>
+				<key>queuedelaymode</key>
+				<integer>0</integer>
+				<key>queuemode</key>
+				<integer>1</integer>
+				<key>runningsubtext</key>
+				<string></string>
+				<key>script</key>
+				<string>function envVar(varName) {
+  return $.NSProcessInfo
+    .processInfo
+    .environment
+    .objectForKey(varName).js
+}
+
+JSON.stringify({ items: envVar("file_list").split("\t").map(file =&gt; ({
+  title: $(file).stringByDeletingPathExtension.lastPathComponent.js,
+  subtitle: $(file).stringByAbbreviatingWithTildeInPath.js,
+  type: "file",
+  arg: file,
+  icon: { path: file, type: "fileicon" }
+}))})</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>subtext</key>
+				<string></string>
+				<key>title</key>
+				<string></string>
+				<key>type</key>
+				<integer>7</integer>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>C30245D7-4188-4568-91D6-4C7F7741A7E6</string>
+			<key>version</key>
+			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>json</key>
+				<string>{
+  "alfredworkflow" : {
+    "arg" : "{query}",
+    "config" : {
+      "tasksettings" : {
+        "recursive" : "{var:show_recursively}",
+        "sort_order" : "{var:sort_order}",
+      }
+    },
+    "variables" : {
+    }
+  }
+}</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.json</string>
+			<key>uid</key>
+			<string>2F3CB593-D5B2-4EAE-96CC-3A1B9CD19221</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argument</key>
+				<string></string>
+				<key>passthroughargument</key>
+				<false/>
+				<key>variables</key>
+				<dict>
+					<key>file_list</key>
+					<string>{query}</string>
+				</dict>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.argument</string>
+			<key>uid</key>
+			<string>6C9C88B8-500A-47C3-93DD-914DB02D0FFD</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>acceptsmulti</key>
+				<integer>0</integer>
+				<key>filetypes</key>
+				<array>
+					<string>public.folder</string>
+				</array>
+				<key>name</key>
+				<string>View folder contents in Alfred</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.action</string>
+			<key>uid</key>
+			<string>4352170D-4321-422E-816F-9004EC51622B</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string># Introduction
+
+This workflow enables you to:
+- view in Alfred the contents of a default folder (set in the workflow configuration) simply by typing your chosen keyword and pressing &lt;kbd&gt;↩︎&lt;/kbd&gt;;
+- alternatively, view in Alfred the contents of a folder you choose by eiher:
+	- starting to type the name of the folder after the relevant keyword; or
+	- selecting a folder in Finder, using your Universal Actions hotkey and choosing `View folder contents in Alfred`.
+
+By default the folder contents are displayed by most recently added but you can change that to alphabetical order by clicking on the dropdown in the workflow configuration.
+
+If you wish to include the content of sub-folders check `Show contents of sub-folders` in the workflow configuration.  
+**Warning**: That may fail with an error message, though no fault of Alfred, on a folder containing many sub-folders.
+
+# The keywords
+
+The keywords will be stripped when you import the workflow (to avoid any conflict with existing keywords you may use) so you will need to set them. I chose `vf`—for "View folder"—for the default and `vfs`—for "View folder (selected)"—for viewing an alternative, selected folder. They are deliberately similar so that both will appear, and can be easily accessed, when I type `vf`.
+
+# Acting on the results displayed in Alfred
+
+When the folder contents are displayed in Alfred you can:
+- press &lt;kbd&gt;↩︎&lt;/kbd&gt; to open the selected item in its default app;
+- press &lt;kbd&gt;→&lt;/kbd&gt; to see the actions offered by Alfred for that item;
+- use &lt;kbd&gt;⇧&lt;/kbd&gt; or &lt;kbd&gt;⌘Y&lt;/kbd&gt; to preview any selected item in the list of files (check your settings under `Alfred Preferences → Features → Previews`).</string>
+	<key>uidata</key>
+	<dict>
+		<key>1E4A7F51-8E14-4665-9D48-29A6AE213DCC</key>
+		<dict>
+			<key>note</key>
+			<string>Feed default folder to next action</string>
+			<key>xpos</key>
+			<real>215</real>
+			<key>ypos</key>
+			<real>45</real>
+		</dict>
+		<key>2F3CB593-D5B2-4EAE-96CC-3A1B9CD19221</key>
+		<dict>
+			<key>note</key>
+			<string>Feed workflow configuration choices</string>
+			<key>xpos</key>
+			<real>340</real>
+			<key>ypos</key>
+			<real>235</real>
+		</dict>
+		<key>4352170D-4321-422E-816F-9004EC51622B</key>
+		<dict>
+			<key>note</key>
+			<string>Universal Action to act on selected folder</string>
+			<key>xpos</key>
+			<real>30</real>
+			<key>ypos</key>
+			<real>385</real>
+		</dict>
+		<key>5989427C-9BBA-44A7-8670-55715157C148</key>
+		<dict>
+			<key>note</key>
+			<string>View the default folder set in configuration &amp; display the contents in Alfred</string>
+			<key>xpos</key>
+			<real>30</real>
+			<key>ypos</key>
+			<real>15</real>
+		</dict>
+		<key>6C9C88B8-500A-47C3-93DD-914DB02D0FFD</key>
+		<dict>
+			<key>note</key>
+			<string>Save folder contents</string>
+			<key>xpos</key>
+			<real>635</real>
+			<key>ypos</key>
+			<real>235</real>
+		</dict>
+		<key>86EC13B7-5090-4DE2-B4EA-194A7C30E2B4</key>
+		<dict>
+			<key>note</key>
+			<string>and open a selected file in its default app</string>
+			<key>xpos</key>
+			<real>935</real>
+			<key>ypos</key>
+			<real>205</real>
+		</dict>
+		<key>C30245D7-4188-4568-91D6-4C7F7741A7E6</key>
+		<dict>
+			<key>note</key>
+			<string>Process folder contents...</string>
+			<key>xpos</key>
+			<real>745</real>
+			<key>ypos</key>
+			<real>205</real>
+		</dict>
+		<key>E754BA99-B0AB-46F8-BCDE-BC531777A076</key>
+		<dict>
+			<key>note</key>
+			<string>Get folder contents</string>
+			<key>xpos</key>
+			<real>440</real>
+			<key>ypos</key>
+			<real>205</real>
+		</dict>
+		<key>E834C3F4-64A3-42F3-84FF-AFE19539D306</key>
+		<dict>
+			<key>note</key>
+			<string>Choose the folder the contents of which to display in Alfred</string>
+			<key>xpos</key>
+			<real>30</real>
+			<key>ypos</key>
+			<real>205</real>
+		</dict>
+	</dict>
+	<key>userconfigurationconfig</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<string>~/Downloads</string>
+				<key>filtermode</key>
+				<integer>1</integer>
+				<key>placeholder</key>
+				<string></string>
+				<key>required</key>
+				<true/>
+			</dict>
+			<key>description</key>
+			<string>This is the folder which the workflow will open when not using the option to specify a folder. You can change it here.</string>
+			<key>label</key>
+			<string>The default folder to be opened</string>
+			<key>type</key>
+			<string>filepicker</string>
+			<key>variable</key>
+			<string>defaultFolder</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<string>vf</string>
+				<key>placeholder</key>
+				<string></string>
+				<key>required</key>
+				<true/>
+				<key>trim</key>
+				<true/>
+			</dict>
+			<key>description</key>
+			<string>This is the keyword used for viewing the default folder (just type the keyword and press ↩︎). You can change ithe keyword here.</string>
+			<key>label</key>
+			<string>Keyword for viewing default folder</string>
+			<key>type</key>
+			<string>textfield</string>
+			<key>variable</key>
+			<string>defaultFolderKeyword</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<string>vfs</string>
+				<key>placeholder</key>
+				<string></string>
+				<key>required</key>
+				<true/>
+				<key>trim</key>
+				<true/>
+			</dict>
+			<key>description</key>
+			<string>This is the keyword used for viewing a selected folder other than the default folder (just type the keyword &amp; start typing the name of the folder).You can change the keyword here.</string>
+			<key>label</key>
+			<string>Keyword for viewing selected folder</string>
+			<key>type</key>
+			<string>textfield</string>
+			<key>variable</key>
+			<string>promptedFolderKeyword</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<string>by_added</string>
+				<key>pairs</key>
+				<array>
+					<array>
+						<string>Alphabetically</string>
+						<string></string>
+					</array>
+					<array>
+						<string>By Most Recent Added</string>
+						<string>by_added</string>
+					</array>
+				</array>
+			</dict>
+			<key>description</key>
+			<string>Choose the order for display of the folder contents</string>
+			<key>label</key>
+			<string>Sort order of folder contents</string>
+			<key>type</key>
+			<string>popupbutton</string>
+			<key>variable</key>
+			<string>sort_order</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<false/>
+				<key>required</key>
+				<false/>
+				<key>text</key>
+				<string>Check to open sub-folders</string>
+			</dict>
+			<key>description</key>
+			<string>Display the contents of sub-folders within the chosen folder</string>
+			<key>label</key>
+			<string>Show contents of sub-folders</string>
+			<key>type</key>
+			<string>checkbox</string>
+			<key>variable</key>
+			<string>show_recursively</string>
+		</dict>
+	</array>
+	<key>variablesdontexport</key>
+	<array/>
+	<key>version</key>
+	<string>2025.3</string>
+	<key>webaddress</key>
+	<string>https://github.com/stephen-lon</string>
+</dict>
+</plist>
