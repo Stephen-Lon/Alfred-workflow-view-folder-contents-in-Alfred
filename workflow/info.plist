@@ -4,8 +4,6 @@
 <dict>
 	<key>bundleid</key>
 	<string>app.alfred.stephenc.viewfolder</string>
-	<key>category</key>
-	<string>Tools</string>
 	<key>connections</key>
 	<dict>
 		<key>1E4A7F51-8E14-4665-9D48-29A6AE213DCC</key>
@@ -44,19 +42,6 @@
 				<key>modifiersubtext</key>
 				<string></string>
 				<key>vitoclose</key>
-				<false/>
-			</dict>
-		</array>
-		<key>5989427C-9BBA-44A7-8670-55715157C148</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>1E4A7F51-8E14-4665-9D48-29A6AE213DCC</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-				<key>vitoclose</key>
 				<true/>
 			</dict>
 		</array>
@@ -71,6 +56,19 @@
 				<string></string>
 				<key>vitoclose</key>
 				<false/>
+			</dict>
+		</array>
+		<key>B9563E1B-E907-4D6F-A733-71EF5A0AF916</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>1E4A7F51-8E14-4665-9D48-29A6AE213DCC</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<true/>
 			</dict>
 		</array>
 		<key>C30245D7-4188-4568-91D6-4C7F7741A7E6</key>
@@ -120,29 +118,70 @@
 	<key>disabled</key>
 	<false/>
 	<key>name</key>
-	<string>View folder contents in Alfred</string>
+	<string>View Folder Contents</string>
 	<key>objects</key>
 	<array>
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>alfredfiltersresults</key>
+				<false/>
+				<key>alfredfiltersresultsmatchmode</key>
+				<integer>0</integer>
+				<key>argumenttreatemptyqueryasnil</key>
+				<true/>
+				<key>argumenttrimmode</key>
+				<integer>0</integer>
 				<key>argumenttype</key>
 				<integer>2</integer>
+				<key>escaping</key>
+				<integer>102</integer>
 				<key>keyword</key>
 				<string>{var:defaultFolderKeyword}</string>
-				<key>subtext</key>
+				<key>queuedelaycustom</key>
+				<integer>3</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<true/>
+				<key>queuedelaymode</key>
+				<integer>0</integer>
+				<key>queuemode</key>
+				<integer>1</integer>
+				<key>runningsubtext</key>
 				<string>View the contents of the folder in Alfred</string>
-				<key>text</key>
+				<key>script</key>
+				<string>if [[ "${keyword_triggers_immediately}" -eq 1 ]]; then
+osascript -e 'tell application id "com.runningwithcrayons.Alfred" to run trigger "skip" in workflow "app.alfred.stephenc.viewfolder"'
+else
+cat &lt;&lt; EOB
+{"items": [
+	{
+		"title": "${alfred_workflow_name}",
+		"subtitle": "${alfred_workflow_description}",
+	}
+]}
+EOB
+fi</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>skipuniversalaction</key>
+				<true/>
+				<key>subtext</key>
 				<string>View {var:defaultFolder}</string>
+				<key>title</key>
+				<string>View {var:defaultFolder}</string>
+				<key>type</key>
+				<integer>11</integer>
 				<key>withspace</key>
 				<false/>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.input.keyword</string>
+			<string>alfred.workflow.input.scriptfilter</string>
 			<key>uid</key>
-			<string>5989427C-9BBA-44A7-8670-55715157C148</string>
+			<string>B9563E1B-E907-4D6F-A733-71EF5A0AF916</string>
 			<key>version</key>
-			<integer>1</integer>
+			<integer>3</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -153,6 +192,11 @@
 				<false/>
 				<key>variables</key>
 				<dict/>
+			</dict>
+			<key>inboundconfig</key>
+			<dict>
+				<key>externalid</key>
+				<string>skip</string>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.utility.argument</string>
@@ -411,19 +455,28 @@ JSON.stringify({ items: envVar("file_list").split("\t").map(file =&gt; ({
 	<string># Introduction
 
 This workflow enables you to:
-- view in Alfred the contents of a default folder (set in the workflow configuration) simply by typing your chosen keyword and pressing &lt;kbd&gt;↩︎&lt;/kbd&gt;;
-- alternatively, view in Alfred the contents of a folder you choose by eiher:
+- view in Alfred the contents of a default folder (set in the workflow configuration) simply by typing your chosen keyword and pressing &lt;kbd&gt;↩︎&lt;/kbd&gt; (but see also the note below);
+- alternatively, view in Alfred the contents of a folder you choose by either:
 	- starting to type the name of the folder after the relevant keyword; or
 	- selecting a folder in Finder, using your Universal Actions hotkey and choosing `View folder contents in Alfred`.
+
+**Note**: In the workflow configuration you can check the box `Trigger keyword immediately` which will dispense with the need to press  &lt;kbd&gt;↩︎&lt;/kbd&gt; following the keyword you use to open the default folder. If you check that the default folder will open immediately you have typed the relevant keyword. *However, in that context please do read the important warnings below.*
 
 By default the folder contents are displayed by most recently added but you can change that to alphabetical order by clicking on the dropdown in the workflow configuration.
 
 If you wish to include the content of sub-folders check `Show contents of sub-folders` in the workflow configuration.  
 **Warning**: That may fail with an error message, though no fault of Alfred, on a folder containing many sub-folders.
 
+# Important warnings when using `Trigger keyword immediately`
+
+These warnings are particularly important if want to check the option to trigger the keyword immediately *and* change the keyword for viewing the default folder. If so:
+
+1. Be *very* careful about the keyword you choose for viewing the default folder. Remember that as soon as you type the keyword the workflow will trigger—so you’ll never have the chance to type more characters after you’ve typed the keyword…which may hinder future searches in Alfred. You need to choose a unique keyword that is also not the start of any other term for which you may wish to search.
+2. In Alfred Preferences → Advanced, under `History:`, it’s better to un-check `Show latest query if within 5 minutes`. If you don’t do that you could end up in a loop of repeatedly triggering the workflow.
+
 # The keywords
 
-The keywords will be stripped when you import the workflow (to avoid any conflict with existing keywords you may use) so you will need to set them. I chose `vf`—for "View folder"—for the default and `vfs`—for "View folder (selected)"—for viewing an alternative, selected folder. They are deliberately similar so that both will appear, and can be easily accessed, when I type `vf`.
+I chose `vfd` (for `view folder default`) and `vfs` (for `view folder selected`). That has the advantage that you see both options in Alfred when you type merely `vf`.
 
 # Acting on the results displayed in Alfred
 
@@ -460,15 +513,6 @@ When the folder contents are displayed in Alfred you can:
 			<key>ypos</key>
 			<real>385</real>
 		</dict>
-		<key>5989427C-9BBA-44A7-8670-55715157C148</key>
-		<dict>
-			<key>note</key>
-			<string>View the default folder set in configuration &amp; display the contents in Alfred</string>
-			<key>xpos</key>
-			<real>30</real>
-			<key>ypos</key>
-			<real>15</real>
-		</dict>
 		<key>6C9C88B8-500A-47C3-93DD-914DB02D0FFD</key>
 		<dict>
 			<key>note</key>
@@ -486,6 +530,15 @@ When the folder contents are displayed in Alfred you can:
 			<real>935</real>
 			<key>ypos</key>
 			<real>205</real>
+		</dict>
+		<key>B9563E1B-E907-4D6F-A733-71EF5A0AF916</key>
+		<dict>
+			<key>note</key>
+			<string>View the default folder set in configuration &amp; display the contents in Alfred</string>
+			<key>xpos</key>
+			<real>30</real>
+			<key>ypos</key>
+			<real>15</real>
 		</dict>
 		<key>C30245D7-4188-4568-91D6-4C7F7741A7E6</key>
 		<dict>
@@ -542,7 +595,7 @@ When the folder contents are displayed in Alfred you can:
 			<key>config</key>
 			<dict>
 				<key>default</key>
-				<string>vf</string>
+				<string>vfd</string>
 				<key>placeholder</key>
 				<string></string>
 				<key>required</key>
@@ -558,6 +611,25 @@ When the folder contents are displayed in Alfred you can:
 			<string>textfield</string>
 			<key>variable</key>
 			<string>defaultFolderKeyword</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<false/>
+				<key>required</key>
+				<false/>
+				<key>text</key>
+				<string>Keyword triggers immediately</string>
+			</dict>
+			<key>description</key>
+			<string>Show content of the default folder immediately upon full keyword being typed (read the warnings!)</string>
+			<key>label</key>
+			<string>Trigger keyword immediately</string>
+			<key>type</key>
+			<string>checkbox</string>
+			<key>variable</key>
+			<string>keyword_triggers_immediately</string>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -629,8 +701,8 @@ When the folder contents are displayed in Alfred you can:
 	<key>variablesdontexport</key>
 	<array/>
 	<key>version</key>
-	<string>2025.3</string>
+	<string>2025.4</string>
 	<key>webaddress</key>
-	<string>https://github.com/stephen-lon</string>
+	<string>https://github.com/Stephen-Lon/Alfred-workflow-view-folder-contents</string>
 </dict>
 </plist>
